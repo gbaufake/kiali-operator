@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ClusterRoleBinding
+metadata:
+  name: kiali
+  namespace: {{ namespace }}
+  labels:
+    app: kiali
+    version: {{ version_label }}
+roleRef:
+  name: kiali
+subjects:
+- kind: ServiceAccount
+  name: kiali-service-account
+  namespace: {{ namespace }}

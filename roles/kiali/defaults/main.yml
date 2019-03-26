@@ -1,0 +1,17 @@
+---
+# defaults file for kiali
+auth_strategy: openshift
+kiali_username:
+kiali_passphrase:
+kiali_username_base64: "YWRtaW4="
+kiali_passphrase_base64: "YWRtaW4="
+server_port: 20001
+jaeger_url: "http://jaeger-query-istio-system.127.0.0.1.nip.io"
+grafana_url: "http://grafana-istio-system.127.0.0.1.nip.io"
+image_name: kiali/kiali
+image_version: lastrelease
+image_pull_policy_token: "imagePullPolicy: Always"
+#namespace: istio-system
+namespace: kiali-operator
+istio_namespace: istio-system
+verbose_mode: 3
