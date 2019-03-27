@@ -11,6 +11,7 @@ rules:
   - namespaces
   - pods
   - routes
+  - secrets
   - services
   - serviceaccounts
   verbs:
