@@ -12,6 +12,7 @@ rules:
   - pods
   - routes
   - services
+  - serviceaccounts
   verbs:
   - '*'
 - apiGroups:
