@@ -24,6 +24,7 @@ rules:
   - get
 - apiGroups:
   - apps
+  - extensions
   resources:
   - deployments
   - daemonsets
@@ -40,6 +41,7 @@ rules:
   - create
 - apiGroups:
   - apps
+  - extensions
   resourceNames:
   - kiali-operator
   resources:
