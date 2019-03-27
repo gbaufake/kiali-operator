@@ -10,3 +10,14 @@ Build the operator image via:
 operator-sdk build kiali/kiali-operator:0.1
 ```
 
+Install the operator via:
+
+```
+cd deploy && ./install-op.sh
+```
+
+Install Kiali via:
+
+```
+cd deploy && ./install-kiali.sh
+```
