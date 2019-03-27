@@ -1,33 +1,24 @@
-apiVersion: rbac.authorization.k8s.io/v1
-kind: Role
+apiVersion: v1
+kind: ClusterRole
 metadata:
-  creationTimestamp: null
   name: kiali-operator
 rules:
 - apiGroups:
   - ""
   resources:
-  - pods
-  - services
-  - endpoints
-  - persistentvolumeclaims
-  - events
   - configmaps
-  - secrets
+  - endpoints
+  - namespaces
+  - pods
+  - routes
+  - services
   verbs:
   - '*'
-- apiGroups:
-  - ""
-  resources:
-  - namespaces
-  verbs:
-  - get
 - apiGroups:
   - apps
   - extensions
   resources:
   - deployments
-  - daemonsets
   - replicasets
   - statefulsets
   verbs:
@@ -48,6 +39,12 @@ rules:
   - deployments/finalizers
   verbs:
   - update
+- apiGroups:
+  - route.openshift.io
+  resources:
+  - routes
+  verbs:
+  - '*'
 - apiGroups:
   - op.kiali.io
   resources:
