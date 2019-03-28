@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: kiali
-  namespace: {{ namespace }}
+  namespace: {{ istio_namespace }}
   labels:
     app: kiali
     version: {{ version_label }}
