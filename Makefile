@@ -3,7 +3,7 @@ OPERATOR_IMAGE ?= kiali/kiali-operator:latest
 operator-build:
 	@echo Building operator
 	operator-sdk build ${OPERATOR_IMAGE}
-	docker push ${OPERATOR_IMAGE}
+	#docker push ${OPERATOR_IMAGE}
 
 operator-deploy-openshift: operator-remove-openshift
 	@echo Deploying Operator
