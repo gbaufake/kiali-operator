@@ -5,16 +5,12 @@ metadata:
 spec:
   state: present
   auth_strategy: openshift
-  kiali_username:
-  kiali_passphrase:
-  #kiali_username_base64:
-  #kiali_passphrase_base64:
+  kiali_username: 'admin'
+  kiali_passphrase: 'admin'
   server_port: 20001
-  jaeger_url: "http://jaeger-query-istio-system.127.0.0.1.nip.io"
-  grafana_url: "http://grafana-istio-system.127.0.0.1.nip.io"
   image_name: kiali/kiali
-  image_version: lastrelease
-  version_label: lastrelease
+  image_version: latest
+  version_label: latest
   image_pull_policy_token: "imagePullPolicy: Always"
   namespace: istio-system
   istio_namespace: istio-system

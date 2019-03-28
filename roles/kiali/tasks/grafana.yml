@@ -1,0 +1,13 @@
+- name: Detect Grafana Route on Openshift
+  k8s_facts:
+    api_version: route.openshift.io/v1
+    kind: Route
+    name: grafana
+    namespace: "{{ istio_namespace }}"
+  register: grafana_cluster
+  when: openshift
+
+- name: Detect Grafana Route
+  set_fact:
+    grafana_url: "http://{{ grafana_cluster['resources'][0]['status']['ingress'][0]['host'] }}"
+  when: openshift

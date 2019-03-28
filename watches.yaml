@@ -3,3 +3,4 @@
   group: op.kiali.io
   kind: Kiali
   role: /opt/ansible/roles/kiali
+  reconcilePeriod: 0
