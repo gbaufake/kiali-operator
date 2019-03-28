@@ -22,7 +22,7 @@ operator-remove-openshift:
 	oc delete --ignore-not-found=true -n kiali-operator -f deploy/role.yaml
 	oc delete --ignore-not-found=true -n kiali-operator -f deploy/role_binding.yaml
 	oc delete --ignore-not-found=true -n kiali-operator -f deploy/operator.yaml
-	oc delete namespace kiali-test-mesh-operator --ignore-not-found=true
+	oc delete namespace kiali-operator --ignore-not-found=true
 
 deploy-kiali:
 	@echo Deploy Kiali CR
