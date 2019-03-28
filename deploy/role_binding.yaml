@@ -7,4 +7,6 @@ subjects:
   name: kiali-operator
   namespace: kiali-operator
 roleRef:
-  name: kiali-operator
+  kind: ClusterRole
+  name: cluster-admin
+  apiGroup: rbac.authorization.k8s.io
