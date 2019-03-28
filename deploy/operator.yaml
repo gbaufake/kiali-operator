@@ -19,7 +19,7 @@ spec:
           - /usr/local/bin/ao-logs
           - /tmp/ansible-operator/runner
           - stdout
-          image: gbaufake/kiali-operator:latest
+          image: kiali/kiali-operator:latest
           imagePullPolicy: "IfNotPresent"
           volumeMounts:
           - mountPath: /tmp/ansible-operator/runner
@@ -27,7 +27,7 @@ spec:
             readOnly: true
         - name: operator
           # Replace this with the built image name
-          image: gbaufake/kiali-operator:latest
+          image: kiali/kiali-operator:latest
           imagePullPolicy: "IfNotPresent"
           volumeMounts:
           - mountPath: /tmp/ansible-operator/runner

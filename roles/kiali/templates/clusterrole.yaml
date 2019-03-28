@@ -2,7 +2,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
   name: kiali
-  namespace: {{ istio_namespace }}
+  namespace: {{ namespace }}
   labels:
     app: kiali
     version: {{ version_label }}

@@ -4,7 +4,7 @@ metadata:
   annotations:
     service.alpha.openshift.io/serving-cert-secret-name: kiali-cert-secret
   name: kiali
-  namespace: {{ istio_namespace }}
+  namespace: {{ namespace }}
   labels:
     app: kiali
     version: {{ version_label }}

@@ -2,7 +2,7 @@ apiVersion: v1beta1
 kind: ClusterRoleBinding
 metadata:
   name: kiali
-  namespace: {{ istio_namespace }}
+  namespace: {{ namespace }}
   labels:
     app: kiali
     version: {{ version_label }}
@@ -13,4 +13,4 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: kiali-service-account
-  namespace: {{ istio_namespace }}
+  namespace: {{ namespace }}

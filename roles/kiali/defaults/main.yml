@@ -1,5 +1,4 @@
 ---
-# defaults file for kiali
 auth_strategy: openshift
 kiali_username: 'admin'
 kiali_passphrase: 'admin'
@@ -7,9 +6,9 @@ server_port: 20001
 image_name: kiali/kiali
 image_version: latest
 image_pull_policy_token: "imagePullPolicy: Always"
+namespace: istio-system
 istio_namespace: istio-system
 verbose_mode: 3
-
+version_label: latest
 
 state: present
-version_label: latest

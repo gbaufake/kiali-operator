@@ -2,7 +2,7 @@ apiVersion: oauth.openshift.io/v1
 kind: OAuthClient
 metadata:
   name: kiali
-  namespace: {{ istio_namespace }}
+  namespace: {{ namespace }}
   labels:
     app: kiali
 redirectURIs:
