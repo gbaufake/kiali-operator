@@ -26,9 +26,9 @@ operator-remove-openshift:
 
 deploy-kiali:
 	@echo Deploy Kiali CR
-	oc apply -n kiali-operator -f crds/op_v1alpha1_kiali_cr.yaml
+	oc apply -n kiali-operator -f deploy/crds/op_v1alpha1_kiali_cr.yaml
 
 
 remove-kiali: 
 	@echo Remove Kiali CR
-	oc delete --ignore-not-found=true -n kiali-operator -f crds/op_v1alpha1_kiali_cr.yaml
+	oc delete --ignore-not-found=true -n kiali-operator -f deploy/crds/op_v1alpha1_kiali_cr.yaml
