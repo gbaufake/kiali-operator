@@ -38,3 +38,10 @@
   with_items:
   - {name: 'templates/route.yaml'}
 
+
+- name: 'Detect Oauth Stategy when is openshift'
+  include: kiali-oauth.yml
+  when:
+    - openshift
+    - auth_strategy is defined
+    - auth_strategy == "openshift"

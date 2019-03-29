@@ -1,0 +1,34 @@
+- name: Detect Kiali Route
+  k8s_facts:
+    api_version: route.openshift.io/v1
+    kind: Route
+    name: kiali
+    namespace: "{{ namespace }}"
+  register: kiali_route_raw
+
+- name: Kiali Protocol
+  set_fact:
+    kiali_protocol: "{{ kiali_route_raw['resources'][0]['spec']['tls']['termination'] }}"
+
+- name: Kiali Protocol when is http
+  set_fact:
+    kiali_protocol: "http://"  
+  when: kiali_protocol == ""
+
+
+- name: Kiali Protocol when is https
+  set_fact:
+    kiali_protocol: "https://"  
+  when: kiali_protocol != ""
+
+
+- name: Create Kiali URL
+  set_fact:
+    kiali_route: "{{ kiali_protocol }}{{ kiali_route_raw['resources'][0]['status']['ingress'][0]['host'] }}"
+
+- name: 'Deploy Oauth File'
+  k8s:
+    state: '{{ state }}'
+    definition: "{{ lookup('template', item.name) }}"
+  with_items:
+  - {name: 'templates/oauth.yaml'}
