@@ -25,6 +25,7 @@
   - {name: 'templates/clusterrole.yaml'}
   - {name: 'templates/clusterrole-viewer.yaml'}
   - {name: 'templates/service.yaml'}
+  - {name: 'templates/ingress.yaml'}
   - {name: 'templates/clusterrolebinding.yaml'}
   - {name: 'templates/deployment.yaml'}
  
